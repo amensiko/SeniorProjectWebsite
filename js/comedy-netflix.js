@@ -29,7 +29,7 @@ var y = d3.scaleLinear()
     .rangeRound([height, 0]);
 
 var color = d3.scaleOrdinal()
-	.range(["#6b486b", "#ff8c00"]);
+	.range(["#ff339f", "#33a5ff"]);
 	
 //var fill = d3.scaleOrdinal()
 	//.range(["#circles-4", "#diagonal-stripe-2"]);
@@ -118,7 +118,7 @@ d3.json("./data/comedy-and-netflix.json", function(error, dataObj) {
   truthData.selectAll("rect")
       .data(function(d) { return d.sentiment; })
     .enter().append("rect")
-      .attr("width", x1.range()[1]/2.2)
+      .attr("width", x1.range()[1]/2.5)
       .attr("x", function(d) { return x1(d.name); })
       .attr("y", function(d) { return y(d.value); })
       .attr("height", function(d) { return height - y(d.value); })
@@ -135,7 +135,7 @@ d3.json("./data/comedy-and-netflix.json", function(error, dataObj) {
       .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
   legend.append("rect")
-     .attr("x", width)
+     .attr("x", width+36)
      .attr("width", 18)
      .attr("height", 18)
      .style("fill", color)
@@ -147,7 +147,7 @@ d3.json("./data/comedy-and-netflix.json", function(error, dataObj) {
 	 //  .attr('fill', fill);  //'url(#diagonalHatch)'
 
   legend.append("text")
-      .attr("x", width - 6)
+      .attr("x", width+30)
       .attr("y", 9)
       .attr("dy", ".35em")
       .style("text-anchor", "end")
