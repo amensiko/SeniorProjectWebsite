@@ -1,0 +1,22 @@
+{
+  "Funny": {
+    "total": 146,
+    "prediction": {
+      "angry": 2,
+      "sad": 7,
+	    "neutral": 73,
+	    "like": 62,
+	    "love": 2
+    }
+  },
+  "Not Funny": {
+    "total": 288,
+    "prediction": {
+      "angry": 16,
+      "sad": 15,
+  	  "neutral": 199,
+  	  "like": 58,
+  	  "love": 0
+    }
+  }
+}

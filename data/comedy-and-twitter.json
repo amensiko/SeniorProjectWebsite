@@ -1,0 +1,16 @@
+{
+  "Funny": {
+    "total": 146,
+    "prediction": {
+      "positive": 115,
+      "negative": 31
+    }
+  },
+  "Not Funny": {
+    "total": 288,
+    "prediction": {
+      "positive": 206,
+	    "negative": 82
+    }
+  }
+}
