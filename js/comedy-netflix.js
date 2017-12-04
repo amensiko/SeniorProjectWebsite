@@ -1,7 +1,7 @@
 function comedy_netflix() {
 
 var svg = d3.select("#comedy-and-netflix").append("svg"),
-    margin = {top: 20, right: 20, bottom: 30, left: 80},
+    margin = {top: 20, right: 5, bottom: 30, left: 80},
     width = 800,
     height = 500,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
