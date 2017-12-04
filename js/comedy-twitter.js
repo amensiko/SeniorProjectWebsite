@@ -1,7 +1,7 @@
 function comedy_twitter() {
 
 var svg = d3.select("#comedy-and-twitter").append("svg"),
-    margin = {top: 20, right: 20, bottom: 30, left: 80},
+    margin = {top: 20, right: 5, bottom: 30, left: 80},
     width = 800,
     height = 500,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -29,7 +29,7 @@ var y = d3.scaleLinear()
     .rangeRound([height, 0]);
 
 var color = d3.scaleOrdinal()
-	.range(["#6b486b", "#ff8c00"]);
+	.range(["#ff339f", "#33a5ff"]);
 	
 //var fill = d3.scaleOrdinal()
 	//.range(["#circles-4", "#diagonal-stripe-2"]);
@@ -80,28 +80,28 @@ d3.json("./data/comedy-and-twitter.json", function(error, dataObj) {
       .style("text-anchor", "end")
       .text("# of ads");
 	  
-  g.append('defs')
-   .append('pattern')
-    	.attr('id', 'diagonalHatch')
-    	.attr('patternUnits', 'userSpaceOnUse')
-    	.attr('width', 4)
-    	.attr('height', 4)
-   .append('path')
-    	.attr('d', 'M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2')
-    	.attr('stroke', '#000000')
-    	.attr('stroke-width', 1);
+  // g.append('defs')
+  //  .append('pattern')
+  //   	.attr('id', 'diagonalHatch')
+  //   	.attr('patternUnits', 'userSpaceOnUse')
+  //   	.attr('width', 4)
+  //   	.attr('height', 4)
+  //  .append('path')
+  //   	.attr('d', 'M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2')
+  //   	.attr('stroke', '#000000')
+  //   	.attr('stroke-width', 1);
 		
-  g.append('defs')
-   .append('pattern')
-    	.attr('id', 'crosshatch')
-    	.attr('patternUnits', 'userSpaceOnUse')
-    	.attr('width', 8)
-    	.attr('height', 8)
-   .append('path')
-    	//.attr('d', 'M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2')
-    	.attr('d', 'M2,2 l5,5')
-    	.attr('stroke', '#000000')
-    	.attr('stroke-width', 1);
+  // g.append('defs')
+  //  .append('pattern')
+  //   	.attr('id', 'crosshatch')
+  //   	.attr('patternUnits', 'userSpaceOnUse')
+  //   	.attr('width', 8)
+  //   	.attr('height', 8)
+  //  .append('path')
+  //   	//.attr('d', 'M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2')
+  //   	.attr('d', 'M2,2 l5,5')
+  //   	.attr('stroke', '#000000')
+  //   	.attr('stroke-width', 1);
 	  
 //  var fill = d3.scaleOrdinal()
 //		.range(["##diagonalHatch"]);//, "#circles"]);
@@ -118,11 +118,13 @@ d3.json("./data/comedy-and-twitter.json", function(error, dataObj) {
   truthData.selectAll("rect")
       .data(function(d) { return d.sentiment; })
     .enter().append("rect")
-      .attr("width", x1.range()[1]/2.2)
+      .attr("width", x1.range()[1]/2.5)
       .attr("x", function(d) { return x1(d.name); })
       .attr("y", function(d) { return y(d.value); })
       .attr("height", function(d) { return height - y(d.value); })
-	  .attr('fill', fill);
+      .style("fill", function(d) { return color(d.name); });
+      //.style("fill", color);
+	  //.attr('fill', color);
       //.style("fill", function(d) { return fill(d.name); });
 
   var legend = g.append("g")//.selectAll(".legend")
@@ -132,20 +134,20 @@ d3.json("./data/comedy-and-twitter.json", function(error, dataObj) {
       .attr("class", "legend")
       .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
-  //legend.append("rect")
-  //    .attr("x", width - 18)
-  //    .attr("width", 18)
-  //    .attr("height", 18)
- //     .style("fill", color)
-	  
   legend.append("rect")
-      .attr("x", width - 18)
-      .attr("width", 18)
-      .attr("height", 18)
-	  .attr('fill', fill);  //'url(#diagonalHatch)'
+     .attr("x", width+36)
+     .attr("width", 18)
+     .attr("height", 18)
+     .style("fill", color)
+	  
+  // legend.append("rect")
+  //     .attr("x", width - 18)
+  //     .attr("width", 18)
+  //     .attr("height", 18)
+	 //  .attr('fill', fill);  //'url(#diagonalHatch)'
 
   legend.append("text")
-      .attr("x", width - 24)
+      .attr("x", width+30)
       .attr("y", 9)
       .attr("dy", ".35em")
       .style("text-anchor", "end")
