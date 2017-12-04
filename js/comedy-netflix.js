@@ -122,7 +122,8 @@ d3.json("./data/comedy-and-netflix.json", function(error, dataObj) {
       .attr("x", function(d) { return x1(d.name); })
       .attr("y", function(d) { return y(d.value); })
       .attr("height", function(d) { return height - y(d.value); })
-      .style("fill", color);
+      .style("fill", function(d) { return color(d.name); });
+      //.style("fill", color);
 	  //.attr('fill', color);
       //.style("fill", function(d) { return fill(d.name); });
 
