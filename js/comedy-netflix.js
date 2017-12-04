@@ -80,28 +80,28 @@ d3.json("./data/comedy-and-netflix.json", function(error, dataObj) {
       .style("text-anchor", "end")
       .text("# of ads");
 	  
-  g.append('defs')
-   .append('pattern')
-    	.attr('id', 'diagonalHatch')
-    	.attr('patternUnits', 'userSpaceOnUse')
-    	.attr('width', 4)
-    	.attr('height', 4)
-   .append('path')
-    	.attr('d', 'M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2')
-    	.attr('stroke', '#000000')
-    	.attr('stroke-width', 1);
+  // g.append('defs')
+  //  .append('pattern')
+  //   	.attr('id', 'diagonalHatch')
+  //   	.attr('patternUnits', 'userSpaceOnUse')
+  //   	.attr('width', 4)
+  //   	.attr('height', 4)
+  //  .append('path')
+  //   	.attr('d', 'M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2')
+  //   	.attr('stroke', '#000000')
+  //   	.attr('stroke-width', 1);
 		
-  g.append('defs')
-   .append('pattern')
-    	.attr('id', 'crosshatch')
-    	.attr('patternUnits', 'userSpaceOnUse')
-    	.attr('width', 8)
-    	.attr('height', 8)
-   .append('path')
-    	//.attr('d', 'M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2')
-    	.attr('d', 'M2,2 l5,5')
-    	.attr('stroke', '#000000')
-    	.attr('stroke-width', 1);
+  // g.append('defs')
+  //  .append('pattern')
+  //   	.attr('id', 'crosshatch')
+  //   	.attr('patternUnits', 'userSpaceOnUse')
+  //   	.attr('width', 8)
+  //   	.attr('height', 8)
+  //  .append('path')
+  //   	//.attr('d', 'M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2')
+  //   	.attr('d', 'M2,2 l5,5')
+  //   	.attr('stroke', '#000000')
+  //   	.attr('stroke-width', 1);
 	  
 //  var fill = d3.scaleOrdinal()
 //		.range(["##diagonalHatch"]);//, "#circles"]);
@@ -132,17 +132,17 @@ d3.json("./data/comedy-and-netflix.json", function(error, dataObj) {
       .attr("class", "legend")
       .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
-  //legend.append("rect")
-  //    .attr("x", width - 18)
-  //    .attr("width", 18)
-  //    .attr("height", 18)
- //     .style("fill", color)
-	  
   legend.append("rect")
-      .attr("x", width - 18)
-      .attr("width", 18)
-      .attr("height", 18)
-	  .attr('fill', fill);  //'url(#diagonalHatch)'
+     .attr("x", width - 18)
+     .attr("width", 18)
+     .attr("height", 18)
+     .style("fill", color)
+	  
+  // legend.append("rect")
+  //     .attr("x", width - 18)
+  //     .attr("width", 18)
+  //     .attr("height", 18)
+	 //  .attr('fill', fill);  //'url(#diagonalHatch)'
 
   legend.append("text")
       .attr("x", width - 24)
