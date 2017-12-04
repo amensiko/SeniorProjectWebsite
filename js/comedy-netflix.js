@@ -135,7 +135,7 @@ d3.json("./data/comedy-and-netflix.json", function(error, dataObj) {
       .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
   legend.append("rect")
-     .attr("x", width - 14)
+     .attr("x", width - 10)
      .attr("width", 18)
      .attr("height", 18)
      .style("fill", color)
@@ -147,7 +147,7 @@ d3.json("./data/comedy-and-netflix.json", function(error, dataObj) {
 	 //  .attr('fill', fill);  //'url(#diagonalHatch)'
 
   legend.append("text")
-      .attr("x", width - 24)
+      .attr("x", width - 16)
       .attr("y", 9)
       .attr("dy", ".35em")
       .style("text-anchor", "end")
