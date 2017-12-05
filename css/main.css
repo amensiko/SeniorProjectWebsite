@@ -45,3 +45,23 @@ body {
 	height: 600px;
 	width: 1100px;
 }
+
+#netflix-roc {
+	height: 550px;
+	width: 1030px;
+}
+
+#netflix-roc svg {
+	height: 600px;
+	width: 1100px;
+}
+
+#comedy-roc {
+	height: 550px;
+	width: 1030px;
+}
+
+#comedy-roc svg {
+	height: 600px;
+	width: 1100px;
+}
